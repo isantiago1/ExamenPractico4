@@ -17,25 +17,22 @@ public class App {
         	        			.departamento(Departamento.CONTABILIDAD)
         	        			.salario(3000.00)
         	        			.genero(Genero.MUJER)
-        	        			.salario(3000.00)
         	        			.build(), 
         	        		Empleado.builder()
         	        			.nombre("Luis")
         	        			.primerApellido("Sanchez")
         	        			.segundoApellido("Garcia")
         	        			.departamento(Departamento.RRHH)
-        	        			.salario(3000.00)
+        	        			.salario(3500.00)
         	        			.genero(Genero.HOMBRE)
-        	        			.salario(2000.00)
         	        			.build(),
         	        		Empleado.builder()
         	        		.nombre("Juan")
         	    			.primerApellido("Martin")
         	    			.segundoApellido("Perez")
         	    			.departamento(Departamento.INFORMATICA)
-        	    			.salario(3000.00)
-        	    			.genero(Genero.MUJER)
-        	    			.salario(3000.00)
+        	    			.salario(4000.00)
+        	    			.genero(Genero.HOMBRE)
         	    			.build()  		     			
         };
         		 
