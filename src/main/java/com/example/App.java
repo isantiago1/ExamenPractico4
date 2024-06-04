@@ -7,8 +7,6 @@ package com.example;
 public class App {
 	public static void main(String[] args) {
 		System.out.println("Rama_5!");
-		
-	
 
 		// Array que permita almacenar tanto objetos empleados como objetos estudiantes.
 
@@ -59,43 +57,52 @@ public class App {
 		// for (Object obj : empleadosYEstudiantes)
 		// System.out.println(obj);
 
-		// Array de Estudiantes del sexo Mujer que tengan un total de Asignaturas igual o superior a la media
+		// Array de Estudiantes del sexo Mujer que tengan un total de Asignaturas igual
+		// o superior a la media
 		// Averiguamos que tipo de objetos tenemos almacenados
-		
-		Estudiante[] arrayMujeres = new Estudiante[5];
-		int j= 0;
-		
+
+		// variables
+		double sumatorioTotalAsignaturasM = 0.0;
+		int totalAsignaturas = 0;
+		double asignaturasPromedio = 0.0;
+		asignaturasPromedio = sumatorioTotalAsignaturasM / totalAsignaturas;
+		// Mejorar el tamaño del Array con argumentos
+		Estudiante[] arrayMujeres = new Estudiante[10];
+		int j = 0;
+
 		for (int i = 0; i < empleadosYEstudiantes.length; i++) {
 			if (empleadosYEstudiantes[i] instanceof Empleado) {
 				System.out.println("En la posicion: " + i + " tenemos un Empleado");
 			} else if (empleadosYEstudiantes[i] instanceof Estudiante) {
 				System.out.print("En la posicion: " + i + " tenemos un Estudiante" + " y es: ");
 				System.out.println(((Estudiante) empleadosYEstudiantes[i]).getGenero());
-				if (((Estudiante) empleadosYEstudiantes[i]).getGenero().equals(Genero.MUJER)){
-					//System.out.println("················");
-					//System.out.println(j);
+				if (((Estudiante) empleadosYEstudiantes[i]).getGenero().equals(Genero.MUJER)) {
 					arrayMujeres[j] = ((Estudiante) empleadosYEstudiantes[i]);
 					System.out.print(" --> Como es mujer se añade al array de mujeres: " + arrayMujeres[j].getNombre());
 					System.out.println(" Genero " + arrayMujeres[j].getGenero());
-					j= j+1;
-				}		
-				
+					j = j + 1;
+				}
+
 			}
 		}
 		
-	    // Mostramos el Array
-		System.out.println("Array de Mujeres --------------------------------------");
-		for (int z= 0; z < arrayMujeres.length; z++) {
-			System.out.println(arrayMujeres[z]);	
+		// Mostramos el Array
+		/*System.out.println("Array de Mujeres --------------------------------------");
+		for (int z = 0; z < arrayMujeres.length; z++) {
+			System.out.println(arrayMujeres[z]);
+		} */
+		
+		// Array Mejorado
+		System.out.println("Mostrar array de Mujeres mejorado y sin null  -------------------------");
+		for (Estudiante est : arrayMujeres) {
+			if (est != null)
+			System.out.println(est);
+			else
+				break;
 		}
-	    // Array Mejorado
-			System.out.println("Array de Mujeres Mejorado -------------------------");
-			for(Estudiante est: arrayMujeres) {
-				System.out.println(est);
-			}
-			
-			// variables
-			// asignaturasPromedio = sumatorioAsignaturas / totalAsignaturas;
-			
+		
+		System.out.println("Total de Asignaturas -------------------------------");
+		System.out.println(sumatorioTotalAsignaturasM);
+
 	}
 }
