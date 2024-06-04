@@ -84,10 +84,18 @@ public class App {
 		}
 		
 	    // Mostramos el Array
-		System.out.println("Array de Mujeres -----------------------------");
+		System.out.println("Array de Mujeres --------------------------------------");
 		for (int z= 0; z < arrayMujeres.length; z++) {
 			System.out.println(arrayMujeres[z]);	
 		}
-		
+	    // Array Mejorado
+			System.out.println("Array de Mujeres Mejorado -------------------------");
+			for(Estudiante est: arrayMujeres) {
+				System.out.println(est);
+			}
+			
+			// variables
+			// asignaturasPromedio = sumatorioAsignaturas / totalAsignaturas;
+			
 	}
 }
