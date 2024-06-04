@@ -49,15 +49,11 @@ public class App {
 			}
 		}
 		;
-		System.out.println("--------------------------------------------------");
-		System.out.print("Numero de elementos que posee el Array: ");
-		System.out.print(empleadosYEstudiantes.length);
+		System.out.println("-------------------------------------------------------------");
+		System.out.print("Numero de elementos que posee el array Empleado Y Estudiante : ");
+		System.out.println(empleadosYEstudiantes.length);
+		System.out.println("-------------------------------------------------------------");
 		System.out.println("");
-
-		// System.out.println("Recorriendo el array Empleado Y Estudiante
-		// -------------------");
-		// for (Object obj : empleadosYEstudiantes)
-		// System.out.println(obj);
 
 		// Array de Estudiantes del sexo Mujer que tengan un total de Asignaturas igual
 		// o superior a la media
@@ -65,11 +61,9 @@ public class App {
 
 		// variables
 		double sumatorioTotalAsignaturasM = 0.0;
-		int totalAsignaturas = 0;
-		double asignaturasPromedio = 0.0;
-		asignaturasPromedio = sumatorioTotalAsignaturasM / totalAsignaturas;
 		// Mejorar el tamaño del Array con argumentos
 		Estudiante[] arrayMujeres = new Estudiante[10];
+		// contador array para añadir elementos
 		int j = 0;
 
 		for (int i = 0; i < empleadosYEstudiantes.length; i++) {
@@ -89,7 +83,7 @@ public class App {
 			}
 		}
 		
-		// Mostramos el Array
+		// Mostramos el Array 
 		/*System.out.println("Array de Mujeres --------------------------------------");
 		for (int z = 0; z < arrayMujeres.length; z++) {
 			System.out.println(arrayMujeres[z]);
