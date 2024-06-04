@@ -19,6 +19,8 @@ public class App {
 						.genero(Genero.MUJER).facultad(Facultad.DERECHO).totalAsignaturasMatriculadas(8).build(),
 				Estudiante.builder().nombre("Maria").primerApellido("Lopez").segundoApellido("Gomez")
 						.genero(Genero.MUJER).facultad(Facultad.DERECHO).totalAsignaturasMatriculadas(8).build(),
+				Estudiante.builder().nombre("Mar").primerApellido("Rodriguez").segundoApellido("Tru")
+						.genero(Genero.MUJER).facultad(Facultad.FARMACIA).totalAsignaturasMatriculadas(11).build(),
 				Estudiante.builder().nombre("Roberto").primerApellido("Santos").segundoApellido("Alvarez")
 						.genero(Genero.HOMBRE).facultad(Facultad.INFORMATICA).totalAsignaturasMatriculadas(9).build() };
 
@@ -74,6 +76,7 @@ public class App {
 			if (empleadosYEstudiantes[i] instanceof Empleado) {
 				System.out.println("En la posicion: " + i + " tenemos un Empleado");
 			} else if (empleadosYEstudiantes[i] instanceof Estudiante) {
+				sumatorioTotalAsignaturasM += (((Estudiante) empleadosYEstudiantes[i]).getTotalAsignaturasMatriculadas());
 				System.out.print("En la posicion: " + i + " tenemos un Estudiante" + " y es: ");
 				System.out.println(((Estudiante) empleadosYEstudiantes[i]).getGenero());
 				if (((Estudiante) empleadosYEstudiantes[i]).getGenero().equals(Genero.MUJER)) {
@@ -101,8 +104,10 @@ public class App {
 				break;
 		}
 		
-		System.out.println("Total de Asignaturas -------------------------------");
+		System.out.println("Total de Asignaturas Matriculadas -------------------------------");
 		System.out.println(sumatorioTotalAsignaturasM);
+		
+		
 
 	}
 }
