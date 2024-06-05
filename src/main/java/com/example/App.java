@@ -61,25 +61,37 @@ public class App {
 
 		// variables
 		double sumatorioTotalAsignaturasM = 0.0;
+		double media=0.0;
+		double xx =0.0;
+		double asig  =0.0;
 		// Mejorar el tamaño del Array con argumentos
 		Estudiante[] arrayMujeres = new Estudiante[10];
 		// contador array para añadir elementos
 		int j = 0;
 
 		for (int i = 0; i < empleadosYEstudiantes.length; i++) {
+			 if (empleadosYEstudiantes[i] instanceof Estudiante) {
+			 sumatorioTotalAsignaturasM += (((Estudiante) empleadosYEstudiantes[i]).getTotalAsignaturasMatriculadas());	 
+			 }
+		}
+		
+		for (int i = 0; i < empleadosYEstudiantes.length; i++) {
 			if (empleadosYEstudiantes[i] instanceof Empleado) {
 				System.out.println("En la posicion: " + i + " tenemos un Empleado");
 			} else if (empleadosYEstudiantes[i] instanceof Estudiante) {
-				sumatorioTotalAsignaturasM += (((Estudiante) empleadosYEstudiantes[i]).getTotalAsignaturasMatriculadas());
 				System.out.print("En la posicion: " + i + " tenemos un Estudiante" + " y es: ");
 				System.out.println(((Estudiante) empleadosYEstudiantes[i]).getGenero());
-				if (((Estudiante) empleadosYEstudiantes[i]).getGenero().equals(Genero.MUJER)) {
-					arrayMujeres[j] = ((Estudiante) empleadosYEstudiantes[i]);
-					System.out.print(" --> Como es mujer se añade al array de mujeres: " + arrayMujeres[j].getNombre());
-					System.out.println(" Genero " + arrayMujeres[j].getGenero());
-					j = j + 1;
+				if (((Estudiante) empleadosYEstudiantes[i]).getGenero().equals(Genero.MUJER)){
+					asig= (((Estudiante) empleadosYEstudiantes[i]).getTotalAsignaturasMatriculadas());
+					media = sumatorioTotalAsignaturasM/ asig;
+					if (asig >= media) {
+						arrayMujeres[j] = ((Estudiante) empleadosYEstudiantes[i]);
+						System.out.print(" --> Mujer y tiene un total de asignaturas superior a la media se añade al array de mujeres: " + arrayMujeres[j].getNombre());
+						System.out.println(" Genero " + arrayMujeres[j].getGenero());
+						j = j + 1;	
+					}
+					
 				}
-
 			}
 		}
 		
@@ -101,7 +113,5 @@ public class App {
 		System.out.println("Total de Asignaturas Matriculadas -------------------------------");
 		System.out.println(sumatorioTotalAsignaturasM);
 		
-		
-
 	}
 }
